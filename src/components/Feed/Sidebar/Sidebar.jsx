@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import houseIcon from "../../../assets/icons8-home.svg";
 import codeIcon from "../../../assets/code.png";
 import musicIcon from "../../../assets/music.png";
@@ -9,10 +10,11 @@ import movieIcon from "../../../assets/movie.png";
 import sportIcon from "../../../assets/sport.png";
 
 const categories = [
-  { name: "New", imgUrl: houseIcon },
-  { name: "Mastery", imgUrl: codeIcon },
-  { name: "Coding", imgUrl: codeIcon },
+  { name: "Quran", imgUrl: houseIcon },
+  { name: "Elzero", imgUrl: codeIcon },
+  { name: "Kimz code", imgUrl: codeIcon },
   { name: "ReactJS", imgUrl: codeIcon },
+  { name: "Nodejs", imgUrl: codeIcon },
   { name: "NextJS", imgUrl: codeIcon },
   { name: "Music", imgUrl: musicIcon },
   { name: "Education", imgUrl: schoolIcon },
@@ -26,13 +28,13 @@ const categories = [
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ setCategoryWord }) => {
   return (
     <div className="sidebar">
       <div className="categories">
         <ul>
           {categories.map((cat, idx) => (
-            <li key={idx} onClick={() => console.log(cat.name)}>
+            <li key={idx} onClick={() => setCategoryWord(cat.name)}>
               <img src={cat.imgUrl} alt="" />
               <p>{cat.name}</p>
             </li>
