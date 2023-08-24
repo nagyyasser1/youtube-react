@@ -1,16 +1,21 @@
 import { Routes, Route } from "react-router-dom";
-import { ChannelDetail, Feed, Navbar, VideoDetail } from "./components";
-import { useState } from "react";
+import {
+  ChannelDetail,
+  Feed,
+  Navbar,
+  SearchFeed,
+  VideoDetail,
+} from "./components";
 
 function App() {
-  const [searchText, setSearchText] = useState("");
   return (
     <div className="app">
-      <Navbar setSearchText={setSearchText} />
+      <Navbar />
       <Routes>
-        <Route index element={<Feed searchText={searchText} />} />
+        <Route index element={<Feed />} />
         <Route path="video/:id" element={<VideoDetail />} />
         <Route path="channel/:id" element={<ChannelDetail />} />
+        <Route path="search/:searchText" element={<SearchFeed />} />
       </Routes>
     </div>
   );

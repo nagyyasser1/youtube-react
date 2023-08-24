@@ -4,8 +4,11 @@ header {
     align-items: center;
     justify-content: space-between;
     height: 70px;
-    border-bottom: 1px solid gray;
+    /* border-bottom: 1px solid gray; */
     /* background-color: rgb(80, 80, 80); */
+    /* background-color: #131212; */
+    box-shadow: -7px 1px 7px #a3a3a3;
+
 }
 
 .Navbar__search-container {

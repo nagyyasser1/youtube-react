@@ -1,14 +1,17 @@
-/* eslint-disable react/prop-types */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
-const SearchBar = ({ setSearchText }) => {
+const SearchBar = () => {
   const inputRef = useRef();
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSearchText(inputRef.current.value);
+    navigate(`search/${inputRef.current.value}`);
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="Navbar__search-container">

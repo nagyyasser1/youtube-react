@@ -6,15 +6,19 @@ const VideoCard = ({ video }) => {
   return (
     <div className="video-card">
       <Link to={`/video/${video.id.videoId}`}>
-        <img
-          src={video.snippet.thumbnails.high.url}
-          alt={video.snippet.title}
-        />
+        <div className="img-container">
+          <img
+            src={video.snippet.thumbnails.high.url}
+            alt={video.snippet.title}
+          />
+        </div>
+      </Link>
+      <div className="card-content">
         <h3 className="video-title">{video.snippet.title}</h3>
-      </Link>
-      <Link to={`/channel/${video.snippet.channelId}`}>
-        <h5 className="channel-name">{video.snippet.channelTitle}</h5>
-      </Link>
+        <Link to={`/channel/${video.snippet.channelId}`}>
+          <h5 className="channel-name">{video.snippet.channelTitle}</h5>
+        </Link>
+      </div>
     </div>
   );
 };

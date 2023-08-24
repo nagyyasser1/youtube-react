@@ -3,11 +3,11 @@ import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import "./Navbar.css";
 
-const Header = ({ setSearchText }) => {
+const Header = () => {
   return (
     <header>
       <Logo />
-      <SearchBar setSearchText={setSearchText} />
+      <SearchBar />
     </header>
   );
 };
